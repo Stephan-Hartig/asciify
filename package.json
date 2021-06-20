@@ -1,0 +1,14 @@
+{
+  "name": "asciify",
+  "version": "1.0.0",
+  "description": "Convert images to ASCII art.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Stephan Hartig",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.3.4"
+  }
+}
