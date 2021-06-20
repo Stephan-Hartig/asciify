@@ -1,8 +1,11 @@
-# Environment
+# Environment.
 .env
 
 # TypeScript, so no JS.
 *.js
+
+# Transpiled code directory.
+dist
 
 # Logs
 logs
