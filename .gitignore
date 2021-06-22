@@ -1,6 +1,11 @@
 # Environment.
 .env
 
+# IntelliJ IDEA.
+**/.idea/*.iws
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+
 # TypeScript, so no JS.
 *.js
 
