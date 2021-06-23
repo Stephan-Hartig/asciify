@@ -53,15 +53,31 @@ function toBlocks(img: Image, columns: number, rows: number): Array<Array<Image>
    );
 }
 
-function simplify(img: Image, charsX: number, charsY: number) {//: Image {
-   const blocks = toBlocks(img.dilate(), charsX, charsY);
-   const foo = blocks.map((row: Image[]) =>
+function simplify(img: Image, charsX: number, charsY: number, threshold: number = 0.5): boolean[][] {
+   const blocks = toBlocks(img.grey().dilate({iterations: 3}), charsX, charsY);
+   
+   const mean = blocks.map((row: Image[]) =>
       row.map((subImg: Image) =>
-         subImg.median()
+         subImg.mean()
+      )
+   );
+   
+   return mean.map((row: number[][]) =>
+      row.map((mean: number[]) =>
+         mean[0] > threshold ? true : false
       )
    );
 }
 
-//export function imageToAscii(img: Image): string[][] {
-//
-//}
+function subChar(simplified: boolean[][], char: string): string {
+   return simplified.map((row: boolean[]) =>
+      row.map((isEdge: boolean) =>
+         isEdge ? char : " "
+      ).join("")
+   ).join("\n");
+}
+
+
+export const priv = (process.env.NODE_ENV === 'test')
+   ? { subChar, simplify, toBlocks }
+   : null;

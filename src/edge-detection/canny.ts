@@ -15,3 +15,7 @@ export async function cannyFromCanvas(canvas: HTMLCanvasElement): Promise<Image>
    const grey = img.grey();
    return cannyEdgeDetector(grey);
 }
+
+export function cannyFromImage(img: Image) {
+   return cannyEdgeDetector(img.grey());
+}
