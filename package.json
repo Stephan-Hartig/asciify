@@ -4,7 +4,7 @@
   "description": "Convert images to ASCII art.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --runInBand",
     "build": "tsc",
     "lint": "eslint . --ext .ts"
   },

@@ -2,7 +2,7 @@ export {};
 
 declare module 'image-js' {
    export interface Image {
-      median(): number[];
-      mean(): number[];
+      median: number[];
+      mean: number[];
    }
 }
