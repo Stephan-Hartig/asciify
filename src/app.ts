@@ -21,6 +21,7 @@ app.use('/static', express.static('public'));
 app.use('/static/css', express.static('public/css'));
 app.use('/static/js', express.static('public/js'));
 app.use('/static/assets', express.static('public/assets'));
+app.use('/favicon.ico', express.static('public/assets/favicon.ico'));
 
 /* Routing. */
 app.get('/', index_get);
