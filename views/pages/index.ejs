@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body style="background-color: #090909; color: #fff4c2;">
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<div class="row d-flex justify-content-center align-items-center p-3" style="background-color: #8888ff;">
+    <div class="img-input-container ta-c pb-md">
+        <label for="image">Upload Image</label>
+        <input type="file" id="image" class="img-input form-control">
+    </div>
+</div>
+<div class="text-center d-flex justify-content-center align-items-center">
+    <div class="column">
+        <section class="img-input-container">
+            <canvas class="img-input-canvas"></canvas>
+        </section>
+        <section class="img-output-container">
+            <div class="img-output-div" style="display: block;font-family: 'Lucida Console', 'Courier New', monospace;"></div>
+        </section>
+    </div>
+</div>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+<script src="static/js/asciify.js"></script>
+</body>
+</html>

@@ -64,11 +64,12 @@ export function meanOverThreshold(grid: Grid<Image>, threshold: number): Grid<bo
  * with whitespace, e.g., ' '.
  * @param grid          Boolean grid, e.g., after the mean threshold function.
  * @param char          Char to replace truthy values.
+ * @param whitespace    Char to replace falsy values.
  */
-export function subChar(grid: Grid<boolean>, char: string): Grid<string> {
+export function subChar(grid: Grid<boolean>, char: string, whitespace: string = ' '): Grid<string> {
    return grid.map((row: boolean[]) =>
       row.map((isEdge: boolean) =>
-         isEdge ? char : ' '
+         isEdge ? char : whitespace
       )
    );
 }
